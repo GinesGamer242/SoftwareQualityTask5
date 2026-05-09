@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roman Numeral Converter</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --text: #1e293b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: var(--card);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h1 { margin-bottom: 1.5rem; font-weight: 600; font-size: 1.5rem; }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+
+        input:focus { outline: none; border-color: var(--primary); }
+
+        .output-box {
+            background: #f1f5f9;
+            padding: 12px;
+            border-radius: 8px;
+            min-height: 20px;
+            margin: 10px 0;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .btn-group { display: flex; gap: 10px; margin-top: 1rem; }
+
+        button {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+
+        .btn-convert { background-color: var(--primary); color: white; }
+        .btn-toggle { background-color: #e2e8f0; color: var(--text); }
+        button:hover { opacity: 0.9; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 id="title">Integer to Roman</h1>
+    
+    <input type="text" id="userInput" placeholder="Enter number...">
+    <div class="output-box" id="result">Result will appear here</div>
+
+    <div class="btn-group">
+        <button class="btn-toggle" onclick="toggleMode()">Swap Mode</button>
+        <button class="btn-convert" onclick="handleConversion()">Convert</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
