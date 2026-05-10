@@ -1,7 +1,9 @@
 module.exports = [
   {
+    files: ["**/*.js"],
     languageOptions: {
-      globals: 
+      sourceType: "commonjs",
+      globals: {
         window: "readonly",
         document: "readonly",
         console: "readonly",
