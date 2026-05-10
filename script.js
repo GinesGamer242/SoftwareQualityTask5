@@ -54,6 +54,4 @@ function handleConversion() {
   }
 }
 
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { toRoman, toInt };
-}
+export { toRoman, toInt };
