@@ -1,4 +1,10 @@
-const expect = chai.expect;
+let expect;
+if (typeof window === 'undefined') {
+    const chai = await import('chai');
+    expect = chai.expect;
+} else {
+    expect = chai.expect;
+}
 
 describe('Domain Partitioning (Valid Partitions)', function() {
     it('TC-1: should convert 50 to "L"', function() {
