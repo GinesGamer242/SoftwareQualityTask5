@@ -1,12 +1,14 @@
 let expect;
+let toRoman, toInt;
+
 if (typeof window === 'undefined') {
-    const chai = await import('chai');
-    expect = chai.expect;
-    const functions = require('./script.js');
-    toRoman = functions.toRoman;
-    toInt = functions.toInt;
+  const chai = await import('chai');
+  expect = chai.expect;
+  const functions = await import('./script.js');
+  toRoman = functions.toRoman;
+  toInt = functions.toInt;
 } else {
-    expect = chai.expect;
+  expect = chai.expect;
 }
 
 describe('Domain Partitioning (Valid Partitions)', function() {
