@@ -2,7 +2,7 @@ module.exports = [
   {
     files: ["**/*.js"],
     languageOptions: {
-      sourceType: "commonjs",
+      sourceType: "module",
       globals: {
         window: "readonly",
         document: "readonly",
