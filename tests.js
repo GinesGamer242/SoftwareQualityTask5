@@ -2,6 +2,9 @@ let expect;
 if (typeof window === 'undefined') {
     const chai = await import('chai');
     expect = chai.expect;
+    const functions = require('./script.js');
+    toRoman = functions.toRoman;
+    toInt = functions.toInt;
 } else {
     expect = chai.expect;
 }
