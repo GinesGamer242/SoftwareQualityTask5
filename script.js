@@ -8,7 +8,10 @@ function toggleMode() {
 }
 
 function toRoman(num) {
-  if (isNaN(num) || num <= 0 || num > 3999) return 'Invalid text';
+  if (isNaN(num) || !Number.isInteger(num) || num <= 0 || num > 3999) {
+    return 'Invalid text';
+  }
+  
   const map = { M: 1000, CM: 900, D: 500, CD: 400, C: 100, XC: 90, L: 50, XL: 40, X: 10, IX: 9, V: 5, IV: 4, I: 1 };
   let str = '';
   for (let i in map) {
@@ -47,7 +50,7 @@ function handleConversion() {
   const resultBox = document.getElementById('result');
 
   if (isIntToRoman) {
-    const num = parseInt(input);
+    const num = Number(input); 
     resultBox.innerText = toRoman(num);
   } else {
     resultBox.innerText = toInt(input);
