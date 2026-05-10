@@ -8,8 +8,23 @@ on:
     branches: ["main"]
 
 jobs:
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set-up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.x
+      - name: Install Dependencies
+        run: nmp install
+      - name: Lint
+        run: node_modules/eslint/bin/eslint.js -c eslint.config.js script.js
+
   test:
     runs-on: ubuntu-latest
+    needs: lint
 
     steps:
       - name: Code checkout
