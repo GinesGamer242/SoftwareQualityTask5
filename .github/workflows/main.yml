@@ -20,7 +20,7 @@ jobs:
       - name: Install Dependencies
         run: npm install
       - name: Lint
-        run: node_modules/eslint/bin/eslint.js -c eslint.config.js script.js
+        run: npx eslint script.js
 
   test:
     runs-on: ubuntu-latest
