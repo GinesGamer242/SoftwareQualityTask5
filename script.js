@@ -1,4 +1,3 @@
-
     let isIntToRoman = true;
 
     function toggleMode() {
@@ -53,4 +52,8 @@
         } else {
             resultBox.innerText = toInt(input);
         }
+    }
+
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = { toRoman, toInt };
     }
