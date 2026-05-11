@@ -8,7 +8,7 @@ function toggleMode() {
 }
 
 function toRoman(num) {
-  if (isNaN(num) || !Number.isInteger(num) || num <= 0 || num > 3999) {
+  if (isNaN(num) || !Number.isInteger(num) || num <= 0 || num > 4000) {
     return 'Invalid text';
   }
   
