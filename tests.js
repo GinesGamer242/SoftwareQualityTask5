@@ -9,6 +9,9 @@ if (typeof window === 'undefined') {
   toInt = functions.toInt;
 } else {
   expect = chai.expect;
+  const functions = await import('./script.js');
+  toRoman = functions.toRoman;
+  toInt = functions.toInt;
 }
 
 describe('Domain Partitioning (Valid Partitions)', function() {
