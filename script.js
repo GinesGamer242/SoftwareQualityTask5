@@ -57,4 +57,10 @@ function handleConversion() {
   }
 }
 
+// Vinculamos las funciones a 'window' solo si estamos en el navegador
+if (typeof window !== 'undefined') {
+  window.toggleMode = toggleMode;
+  window.handleConversion = handleConversion;
+}
+
 export { toRoman, toInt };
