@@ -48,16 +48,33 @@ function toInt(roman) {
 function handleConversion() {
   const input = document.getElementById('userInput').value.trim();
   const resultBox = document.getElementById('result');
+  let result = '';
 
   if (isIntToRoman) {
     const num = Number(input); 
-    resultBox.innerText = toRoman(num);
+    result = toRoman(num);
+    resultBox.innerText = result;
+    
+    if (typeof gtag === 'function') {
+      gtag('event', 'convert_to_roman', {
+        'input_value': num,
+        'conversion_result': result
+      });
+    }
+
   } else {
-    resultBox.innerText = toInt(input);
+    result = toInt(input);
+    resultBox.innerText = result;
+    
+    if (typeof gtag === 'function') {
+      gtag('event', 'convert_to_integer', {
+        'input_value': input,
+        'conversion_result': result
+      });
+    }
   }
 }
 
-// Vinculamos las funciones a 'window' solo si estamos en el navegador
 if (typeof window !== 'undefined') {
   window.toggleMode = toggleMode;
   window.handleConversion = handleConversion;
